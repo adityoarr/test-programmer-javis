@@ -1,0 +1,19 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+coverage
+
+# Production
+build
+dist
+
+# Environment variables (PENTING: Jangan upload rahasia ke git)
+.env
+
+# Docker & OS
+.DS_Store
+Thumbs.db
+docker-compose.override.yml

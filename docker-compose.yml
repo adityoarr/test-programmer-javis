@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: javis_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: javis_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - javis_network
+
+  redis:
+    image: redis:alpine
+    container_name: javis_redis
+    restart: always
+    networks:
+      - javis_network
+
+  backend:
+    build: ./backend
+    container_name: javis_backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      DB_HOST: db
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_NAME: javis_db
+      REDIS_HOST: redis
+      JWT_SECRET: rahasia_negara_api
+    depends_on:
+      - db
+      - redis
+    networks:
+      - javis_network
+
+  frontend:
+    build: ./frontend
+    container_name: javis_frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - backend
+    networks:
+      - javis_network
+
+networks:
+  javis_network:
+    driver: bridge
+
+volumes:
+  db_data:

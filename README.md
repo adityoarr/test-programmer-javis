@@ -1,1 +1,72 @@
-# test-programmer-javis
+# Web Programmer Challenge - PT. Javis Teknologi Albarokah
+
+Aplikasi autentikasi web sederhana yang dibangun menggunakan arsitektur **Microservices-ready** dengan Docker. Proyek ini mencakup fitur Login, Validasi, Rate Limiting, Dark Mode, dan Unit Testing.
+
+## 🛠 Tech Stack
+
+Sesuai spesifikasi teknis yang disarankan:
+
+- **Frontend:** React.js (Vite) + TailwindCSS
+- **Backend:** Node.js (Express)
+- **Database:** MySQL 8.0
+- **Cache & Rate Limiter:** Redis
+- **Containerization:** Docker & Docker Compose
+- **Testing:** Jest & Supertest
+
+## 🚀 Fitur Utama
+
+1. **Sistem Login Aman:** Menggunakan `bcrypt` untuk hashing dan `JWT` dengan `HttpOnly Cookie`.
+2. **Validasi Input:** Validasi sisi server dan klien (termasuk format email Regex).
+3. **Rate Limiting:** Mencegah brute-force (Maksimal 5 percobaan gagal/menit per IP) menggunakan Redis.
+4. **Dark Mode:** Tampilan responsif dengan toggle tema Gelap/Terang.
+5. **Dashboard Terproteksi:** Halaman dashboard hanya bisa diakses jika token valid.
+6. **Unit Testing:** Pengujian otomatis untuk validasi backend.
+
+## 📂 Struktur Arsitektur
+
+Proyek ini menggunakan struktur Monorepo yang dijalankan via Docker:
+
+/ ├── backend/ # Express API Server ├── frontend/ # React Client ├── docker-compose.yml # Orkestrasi Container ├── init.sql # Skrip inisialisasi Database └── ...
+
+## 🏃‍♂️ Cara Menjalankan Project (Local)
+
+### Prasyarat
+
+Pastikan **Docker** dan **Docker Compose** sudah terinstal di komputer Anda.
+
+### Langkah-langkah
+
+1. Clone repository ini.
+2. Buka terminal di root folder proyek.
+3. Jalankan perintah berikut untuk membangun dan menyalakan semua layanan:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+4. Tunggu hingga proses selesai.
+   Frontend dapat diakses di: http://localhost:5173
+   Backend berjalan di: http://localhost:5000
+
+## Akun Demo
+
+Karena database dimulai kosong, silakan gunakan Postman atau curl untuk registrasi user pertama: POST `http://localhost:5000/register`
+
+```bash
+{
+  "email": "admin@javis.co.id",
+  "password": "password123"
+}
+```
+
+Lalu login melalui Frontend.
+
+## 🧪 Cara Menjalankan Unit Test
+
+Untuk menjalankan pengujian validasi backend:
+Pastikan container backend berjalan.
+Masuk ke terminal container dan jalankan test:
+
+```bash
+    docker exec -it javis_backend npm test
+```
