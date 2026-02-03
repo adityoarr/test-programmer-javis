@@ -75,6 +75,6 @@ Karena database dimulai kosong, silakan gunakan Postman atau curl untuk registra
 }
 ```
 
-![Postman](screenshots/postman.png)
+<img src="screenshots/postman.png" alt="Postman" width="500">
 
 Lalu login melalui Frontend.
