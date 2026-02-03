@@ -24,9 +24,25 @@ Sesuai spesifikasi teknis yang disarankan:
 
 ## 📂 Struktur Arsitektur
 
-Proyek ini menggunakan struktur Monorepo yang dijalankan via Docker:
+Aplikasi ini dirancang menggunakan arsitektur **Client-Server** yang dijalankan dalam lingkungan **Docker Container** terisolasi:
 
-/ ├── backend/ # Express API Server ├── frontend/ # React Client ├── docker-compose.yml # Orkestrasi Container ├── init.sql # Skrip inisialisasi Database └── ...
+1.  **Frontend Service (React.js + TailwindCSS)**
+    - Berjalan di port `5173` sebagai antarmuka pengguna.
+    - Mengonsumsi REST API dari Backend menggunakan Axios.
+    - Menangani validasi input sisi klien dan tampilan responsif (Mobile/Desktop).
+
+2.  **Backend Service (Node.js + Express)**
+    - Berjalan di port `5000` sebagai pusat logika aplikasi.
+    - Menangani otentikasi aman menggunakan **JWT** & **HttpOnly Cookie**.
+    - Melakukan validasi data ketat (termasuk Regex Email) sebelum diproses.
+
+3.  **Database Service (MySQL)**
+    - Menyimpan data pengguna secara persisten menggunakan Docker Volume.
+    - Hanya dapat diakses oleh Backend (terisolasi dari publik).
+
+4.  **Rate Limiter Service (Redis)**
+    - Menyimpan jejak percobaan login sementara di memori (In-Memory).
+    - Membatasi serangan _Brute Force_ (Maksimal 5x gagal per menit per IP).
 
 ## 🏃‍♂️ Cara Menjalankan Project (Local)
 
