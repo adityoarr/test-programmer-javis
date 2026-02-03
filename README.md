@@ -78,3 +78,18 @@ Karena database dimulai kosong, silakan gunakan Postman atau curl untuk registra
 <img src="screenshots/postman.png" alt="Postman" width="500">
 
 Lalu login melalui Frontend.
+
+## Screenshots
+
+Berikut adalah screenshots dari project ini:
+
+1. Login - Light - Desktop
+   <img src="screenshots/login-desktop-light.png" alt="" width="400"/>
+2. Login - Dark - Desktop
+   <img src="screenshots/login-desktop-dark.png" alt="" width="400"/>
+3. Login - Dark - Mobile
+   <img src="screenshots/login-mobile-dark.png" alt="" width="400"/>
+4. Dashboard - Light - Desktop
+   <img src="screenshots/dashboard-light.png" alt="" width="400"/>
+5. Dashboard - Dark - Desktop
+   <img src="screenshots/dashboard-dark.png" alt="" width="400"/>
