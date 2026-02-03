@@ -83,13 +83,13 @@ Lalu login melalui Frontend.
 
 Berikut adalah screenshots dari project ini:
 
-1. Login - Light - Desktop
-   <img src="screenshots/login-desktop-light.png" alt="" width="400"/>
-2. Login - Dark - Desktop
-   <img src="screenshots/login-desktop-dark.png" alt="" width="400"/>
-3. Login - Dark - Mobile
-   <img src="screenshots/login-mobile-dark.png" alt="" width="400"/>
-4. Dashboard - Light - Desktop
-   <img src="screenshots/dashboard-light.png" alt="" width="400"/>
-5. Dashboard - Dark - Desktop
-   <img src="screenshots/dashboard-dark.png" alt="" width="400"/>
+1. Login - Light - Desktop<br/>
+   <img src="screenshots/login-desktop-light.png" alt="" width="400"/><br/>
+2. Login - Dark - Desktop<br/>
+   <img src="screenshots/login-desktop-dark.png" alt="" width="400"/><br/>
+3. Login - Dark - Mobile<br/>
+   <img src="screenshots/login-mobile-dark.png" alt="" width="400"/><br/>
+4. Dashboard - Light - Desktop<br/>
+   <img src="screenshots/dashboard-light.png" alt="" width="400"/><br/>
+5. Dashboard - Dark - Desktop<br/>
+   <img src="screenshots/dashboard-dark.png" alt="" width="400"/><br/>
