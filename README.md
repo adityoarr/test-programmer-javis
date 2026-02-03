@@ -54,19 +54,9 @@ Karena database dimulai kosong, silakan gunakan Postman atau curl untuk registra
 
 ```bash
 {
-  "email": "admin@javis.co.id",
-  "password": "password123"
+  "email": "adityoarr@example.com",
+  "password": "123"
 }
 ```
 
 Lalu login melalui Frontend.
-
-## 🧪 Cara Menjalankan Unit Test
-
-Untuk menjalankan pengujian validasi backend:
-Pastikan container backend berjalan.
-Masuk ke terminal container dan jalankan test:
-
-```bash
-    docker exec -it javis_backend npm test
-```
